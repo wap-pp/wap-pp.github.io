@@ -57,3 +57,4 @@ footer { background: #f0f0f0; color: #aaa; text-indent: 1em; text-shadow: 0 0 10
 .detail { color: #888; padding: 7px;}
 .detail h1 { font-size: 14px;  line-height: 35px; border-bottom: 1px solid #ccc; }
 .detail article p { line-height: 25px; text-indent: 2em; }
+.detail article hr { outline: none; border: 0px; border-bottom: 1px dashed #ccc; }
