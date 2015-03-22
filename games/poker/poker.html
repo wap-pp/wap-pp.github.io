@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Poker</title>
+</head>
+<body>
+	<div id="poker-panel">
+		<button id="readyBtn">Ready ? Go !</button>
+		<div class="poker-img">
+			
+		</div>
+		<div class="poker-answer">
+			数字：
+				  <input type="radio" value="1"> 1 
+				  <input type="radio" value="2"> 2 
+				  <input type="radio" value="3"> 3 
+				  <input type="radio" value="4"> 4 
+				  <input type="radio" value="5"> 5 
+				  <input type="radio" value="6"> 6 
+				  <input type="radio" value="7"> 7 
+				  <input type="radio" value="8"> 8 
+				  <input type="radio" value="9"> 9 
+				  <input type="radio" value="10"> 10 
+				  <input type="radio" value="11"> 11 
+				  <input type="radio" value="12"> 12 
+				  <input type="radio" value="13"> 13 
+		</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script>
+		var pokers = ['r1','r2','r3','r4','r5','r6','r7','r8','r9','r10','r11','r12','r13',
+		     		  'b1','b2','b3','b4','b5','b6','b7','b8','b9','b10','b11','b12','b13',
+		     		  'c1','c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12','c13',
+		     		  'f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13'
+						]
+
+		var P = {};
+		P.pokerList = [];
+		P.hashList = {};
+		P.createPokerList = function(num){
+			while(P.pokerList.length < num){
+				var key = parseInt(Math.random()*52);
+				if(P.hashList[key]==null){
+					P.pokerList.push(key);
+					P.hashList[key] = true;
+				}
+			}
+		}
+
+		P.showPoker = function(){
+			var i = 0;
+			var timer = setInterval(function(){
+				$(".poker-img").html('<img src="images/'+pokers[P.pokerList[i]]+'.png" alt="" />');
+				i++;
+				if(i==5){
+					clearInterval(timer);
+					$(".poker-img").html('请回答');
+				}
+			}, 1000);
+		}
+		$(function(){
+			$("#readyBtn").click(function(){
+				$("#readyBtn").hide();
+
+				P.createPokerList(5);
+				P.showPoker();
+
+				console.log(P.pokerList);
+			})
+		})
+	</script>
+</body>
+</html>

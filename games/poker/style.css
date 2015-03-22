@@ -1,0 +1,74 @@
+ CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Reset CSS */
+
+/*.poker { display: inline-block; width: 88px; height: 136px; background: url(poker.jpg) no-repeat;  }
+ King  
+.poker.king1 { background-position: -743px -9px; }
+.poker.king2 { background-position: -835px -9px; }
+ 黑桃 ♠ 
+.poker.blackT1 { background-position: -101px -425px;}
+.poker.blackT2 { background-position: -10px -425px;}
+.poker.blackT3 { background-position: -935px -525px;}
+ 梅花 ♣ 
+.poker.blackM1 { background-position:  }
+ 方块 ◇ 
+.poker.refF1 { }
+.poker.redF1 { }
+ 红桃 ♥ 
+.poker.redT1 {   } */
+#poker-panel {
+	text-align: center;
+	padding: 50px;
+}
+.poker-img {
+	/*border: 1px solid #ccc;*/
+	width: 77px;
+	height: 103px;
+	padding: 5px;
+	border-radius: 5px;
+	margin: 30px auto;
+}
