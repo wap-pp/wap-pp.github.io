@@ -60,6 +60,10 @@ table {
 .poker.redF1 { }
  红桃 ♥ 
 .poker.redT1 {   } */
+body {
+	background: #888;
+	font: 14px/16px 'Microsoft Yahei', Arial;
+}
 #poker-panel {
 	text-align: center;
 	padding: 50px;
@@ -67,8 +71,31 @@ table {
 .poker-img {
 	/*border: 1px solid #ccc;*/
 	width: 77px;
-	height: 103px;
+	height: 105px;
 	padding: 5px;
 	border-radius: 5px;
 	margin: 30px auto;
+}
+.poker-img img {
+	border-radius: 5px;
+}
+.poker-answer {
+	padding: 30px;
+}
+.poker-answer .group {
+	width: 300px;
+	overflow: hidden;
+	line-height: 25px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.poker-answer label {
+	display: block;
+	width: 60px;
+	float: left;
+}
+.poker-answer .group > div {
+	float: left;
+	width: 200px;
+	text-align: left;
 }

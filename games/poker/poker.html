@@ -12,21 +12,39 @@
 		<div class="poker-img">
 			
 		</div>
-		<div class="poker-answer">
-			数字：
-				  <input type="radio" value="1"> 1 
-				  <input type="radio" value="2"> 2 
-				  <input type="radio" value="3"> 3 
-				  <input type="radio" value="4"> 4 
-				  <input type="radio" value="5"> 5 
-				  <input type="radio" value="6"> 6 
-				  <input type="radio" value="7"> 7 
-				  <input type="radio" value="8"> 8 
-				  <input type="radio" value="9"> 9 
-				  <input type="radio" value="10"> 10 
-				  <input type="radio" value="11"> 11 
-				  <input type="radio" value="12"> 12 
-				  <input type="radio" value="13"> 13 
+		
+	</div>
+	<div class="poker-answer" style="display: none;">
+		<div class="group">
+			<label for="">数字：</label>
+			<div>
+				<input type="radio" name="num" value="1"> 1 
+				<input type="radio" name="num" value="2"> 2 
+				<input type="radio" name="num" value="3"> 3 
+				<input type="radio" name="num" value="4"> 4 
+				<input type="radio" name="num" value="5"> 5 
+				<input type="radio" name="num" value="6"> 6 
+				<input type="radio" name="num" value="7"> 7 
+				<input type="radio" name="num" value="8"> 8 
+				<input type="radio" name="num" value="9"> 9 
+				<input type="radio" name="num" value="10"> 10 
+				<input type="radio" name="num" value="11"> 11 
+				<input type="radio" name="num" value="12"> 12 
+				<input type="radio" name="num" value="13"> 13 
+			</div>
+		</div>
+	
+		<div class="group">
+			<label for="">花色：</label>
+			<div>
+			    <input type="radio" name="type" value="r"> ◆
+			    <input type="radio" name="type" value="c"> ♥
+			    <input type="radio" name="type" value="b"> ♣
+			    <input type="radio" name="type" value="f"> ♠
+			</div>
+		</div>
+		<div class="group">	
+			<button id="submitBtn" type="button">提交</button>
 		</div>
 	</div>
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -40,6 +58,8 @@
 		var P = {};
 		P.pokerList = [];
 		P.hashList = {};
+		P.resultList = [];
+		P.step = 0;
 		P.createPokerList = function(num){
 			while(P.pokerList.length < num){
 				var key = parseInt(Math.random()*52);
@@ -57,9 +77,25 @@
 				i++;
 				if(i==5){
 					clearInterval(timer);
-					$(".poker-img").html('请回答');
+					setTimeout(function(){
+						$(".poker-img").html('请回答');
+						$(".poker-answer").show();
+					},1000)
+					
 				}
 			}, 1000);
+		}
+
+		P.showResult = function(){
+			var num = $("input[name='num']:checked").val();
+			var type = $("input[name='type']:checked").val();
+			var yourResult = type+""+num;
+			if(pokers[P.pokerList[P.step]]===yourResult){
+				$(".poker-img").html('<p>恭喜，回答正确</p>'+'<img src="images/'+yourResult+'.png" alt="" />');
+			}else {
+				$(".poker-img").html('<p>回答错误</p>'+'<img src="images/'+pokers[P.pokerList[P.step]]+'.png" alt="" />');
+			}
+			P.step++;
 		}
 		$(function(){
 			$("#readyBtn").click(function(){
@@ -69,6 +105,10 @@
 				P.showPoker();
 
 				console.log(P.pokerList);
+			})
+
+			$("#submitBtn").click(function(){
+				P.showResult();
 			})
 		})
 	</script>
