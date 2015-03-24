@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Circle</title>
+	<style>
+		#wrap { width: 500px; height: 500px; border: 1px solid #ccc; }
+		#wrap .point { width: 5px; height: 5px; border-radius: 5px; background: #3399ff; position: absolute; top: 10px; left: 10px;}
+		#wrap span { width: 1px; height: 1px; background: #ccc; position: absolute;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<em class="point"></em>
+	</div>
+	<script>
+	(function(){
+
+		var points = [];
+		var wrap = document.getElementById("wrap");
+
+		/**
+		* 绘图：圆形的,标准方程式(x－a)²+(y－b)²=r²
+		* @param {number} a  x坐标
+		* @param {number} b  y坐标
+		* @param {number} r  半径
+		* @param {number} step 半径
+		*/
+		var createPoints = function(a, b, r, step){
+			var tmpArr = [];
+			var x = a - r;
+			var lastX = a + r;
+			while(x<lastX){
+				var y = Math.sqrt(r*r - (x-a)*(x-a))+b;
+				var yOther = -Math.sqrt(r*r - (x-a)*(x-a))+b;
+				points.push([x, y]);
+				tmpArr.push([x, yOther]);
+				// x += Math.abs( Math.sin(step/(2*Math.PI*r)+Math.atan2(y,x))*r - x );
+				x += step;
+			}
+			points = points.concat(tmpArr.reverse());
+		}
+
+		/**
+		* 绘图
+		*/
+		var drawPoints = function(){
+			var html = '';
+			for(var index in points){
+				html += '<span style="left: '+points[index][0]+'px; top: '+points[index][1]+'px;"></span>';
+			}
+			wrap.innerHTML += html;
+		}
+
+		/*
+		* 跑起来
+		*/
+		var move = function(){
+			var point = document.getElementsByClassName("point")[0];
+			var t = 0;
+			setInterval(function(){
+				point.style.left = points[t][0]+"px";
+				point.style.top = points[t][1]+"px";
+				t++;
+				if(t==points.length){
+					t = 0;
+				}
+			},30)
+		}
+
+		window.onload = function(){
+			createPoints(200, 200, 100, 2);
+			drawPoints();
+			move();
+		}
+
+	})()
+	</script>
+</body>
+</html>

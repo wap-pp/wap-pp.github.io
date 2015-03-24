@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rectangle</title>
+	<style>
+		#wrap { width: 300px; height: 300px; border: 1px solid #ccc; }
+		#wrap .point { width: 5px; height: 5px; border-radius: 5px; background: #3399ff; position: absolute; top: 10px; left: 10px;}
+		#wrap span { width: 1px; height: 1px; background: #ccc; position: absolute;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<em class="point"></em>
+	</div>
+	<script>
+	(function(){
+		
+		var wrap = document.getElementById("wrap");
+		
+		var points = [];
+		/**
+		* 创建点 
+		* @param { Number } w 矩形宽度
+		* @param { Number } h 矩形高度
+		* @param { Number } x 矩形开始x坐标
+		* @param { Number } y 矩形开始y坐标
+		* @param { Number } stepX x轴前进速度
+		* @param { Number } stepY y轴前进速度
+		*/
+		var createPoint = function(w, h, x, y, stepX, stepY){
+			var xB = []; yL = [];
+			for(var i = 0; i<w; i+=stepX){
+				points.push([i+x, y]);
+				xB.push([i+x, y+h]);
+			}
+			for(var i = 0; i<h; i+=stepY){
+				points.push([w+x, i+y]);
+				yL.push([x, i+y]);
+			}
+			points = points.concat(xB.reverse());
+			points = points.concat(yL.reverse());
+		}
+
+		/**
+		* 绘图
+		*/
+		var drawPoints = function(){
+			var html = '';
+			for(var key in points){
+				html += '<span style="left: '+points[key][0]+'px; top: '+points[key][1]+'px"></span>';
+			}
+			wrap.innerHTML += html;
+		}
+
+		/**
+		* 动起来~
+		*/
+		var move = function(){
+			var point = document.getElementsByClassName("point")[0];
+
+			var t = 0;
+			setInterval(function(){
+				point.style.left = points[t][0] - 2 + "px";
+				point.style.top = points[t][1] - 2 + "px";
+				t++;
+				if(t==points.length){
+					t = 0;
+				}
+			},30)
+		}
+
+		window.onload = function(){
+			createPoint(200, 200, 50, 50, 3, 5);
+			drawPoints();
+			move();
+		}
+
+	})()
+	</script>
+	
+</body>
+</html>

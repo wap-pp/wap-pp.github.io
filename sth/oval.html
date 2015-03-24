@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Oval</title>
+	<style>
+		#wrap { width: 1000px; height: 1000px; border: 1px solid #ccc; }
+		#wrap .point { width: 5px; height: 5px; border-radius: 5px; background: #3399ff; position: absolute; top: 10px; left: 10px;}
+		#wrap span { width: 1px; height: 1px; background: #ccc; position: absolute;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<em class="point"></em>
+	</div>
+
+	<script>
+		(function(){
+
+			var wrap = document.getElementById("wrap");
+
+			var points = [];
+
+			/**
+			* 绘图 ，椭圆 公式：(x-h)²/a² + (y-k)²/b² = 1
+			* h,k 中心点
+			* a,b 
+			*/
+			var createPoints = function(h, k, a, b, step){
+				var tmp = [];
+				var x = h - a;
+				var last = h + a;
+				while(x<last) {
+					var y = b*Math.sqrt( 1-(x-h)*(x-h)/(a*a) ) + k;
+					var yOther = -b*Math.sqrt( 1-(x-h)*(x-h)/(a*a) ) + k;
+					points.push([x, y]);
+					tmp.push([x, yOther]);
+					x += step;
+				}
+				points = points.concat(tmp.reverse());
+			}
+
+			/**
+			* 绘图
+			*/
+			var draw = function(){
+				var html = '';
+				for(var index in points){
+					html += '<span style="left: '+points[index][0]+'px; top: '+points[index][1]+'px;"></span>';
+				}
+				wrap.innerHTML += html;
+			}
+
+
+			/**
+			* 跑起来
+			*/
+			var move = function(){
+				var point = document.getElementsByClassName("point")[0];
+				var t = 0;
+
+				setInterval(function(){
+					point.style.left = points[t][0]+"px";
+					point.style.top = points[t][1]+"px";
+					t++;
+					if(t==points.length){
+						t=0;
+					}
+				}, 50)
+
+			}
+
+			window.onload = function(){
+				createPoints(300, 300, 40, 15, 2);
+				draw();
+				move();
+			}
+
+		})();
+	</script>
+</body>
+</html>

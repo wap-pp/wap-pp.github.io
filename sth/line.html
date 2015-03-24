@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Oval</title>
+	<style>
+		#wrap { width: 300; height: 300px; border: 1px solid #ccc; position: relative;}
+		#wrap span { background:#000; width: 1px; height: 1px; border-radius: 1px; position: absolute; top: 50px; }
+		#wrap .point { background: red; width: 4px; height: 4px; border-radius: 4px; position: absolute; top: 48px; }
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		
+	</div>
+
+	<script>
+	(function(){
+		var points = [];
+		var createPoints = function(){
+			for(var i = 0; i < 500; i+=2){
+				points.push(i);
+			}
+		}
+
+		var drawPoints = function(){
+			var html = '';
+			for( var key in points){
+				html += '<span style="left: '+(points[key]+100)+'px;"></span>';
+			}
+			document.getElementById("wrap").innerHTML = html;
+		}
+
+		var move = function(){
+			document.getElementById("wrap").innerHTML += '<em class="point"><em>';
+			var point = document.getElementsByClassName("point")[0];
+
+			var t = 0;
+			var flag = true;
+			setInterval(function(){
+				point.style.left = points[t]+98+"px";
+				t++;
+				if(t>points.length){
+					t = 0;
+				}
+			}, 100);
+		}
+
+		window.onload = function(){
+			createPoints();
+			drawPoints();
+			move();
+		}
+
+	})();
+	</script>
+</body>
+</html>
