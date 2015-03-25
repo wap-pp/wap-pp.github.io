@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Code Show</title>
+	<style>
+		.codePanel {  }
+		.codePanel .area { display: none; }
+		.codePanel .code { width: 100%; padding: 20px; background: #333; color: #fff; }
+	</style>
+</head>
+<body>
+	<div class="codePanel">
+		<textarea name="" id="" cols="30" rows="10" class="area">
+			<script>
+				alert("aaa");
+			</script>
+		</textarea>
+		<div class="code"></div>
+	</div>
+	
+
+	<script></script>
+	<script>
+		(function(){
+			var key = ['script'];
+
+			var createCodeShowPanel = function(replaceID){
+				var code = replaceID.value;
+				var replacedCode = escape(code);
+
+				return replacedCode;
+			}
+
+			window.onload = function(){
+				var codes = document.getElementsByClassName("codePanel");
+				for(var i = 0; i < codes.length; i++){
+					var one = codes[i];
+					var replaceID = one.getElementsByClassName("area")[0];
+					var replacedCode = createCodeShowPanel(replaceID);
+					one.getElementsByClassName('code')[0].innerHTML = replacedCode;
+				}
+			}
+		})();
+	</script>
+</body>
+</html>
