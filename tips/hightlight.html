@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../tools/highlight/styles/monokai.css">
+	<title>Highlight.js使用</title>
+</head>
+<body>
+	<section class="detail">
+		<h1>Highlight.js使用</h1>
+		<article>
+			<p>因为想写博客，所以先搞个展示code的工具，highlight就被我找到啦！~~~~</p>
+			<p>开始使用起来，duang~ duang~!~</p>
+
+		</article>
+	</section>
+
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script src="../tools/highlight/highlight.pack.js"></script>
+	<script>
+		$(function(){
+			hljs.initHighlightingOnload();
+			$("pre code").each(function(i, block){
+				hljs.highlightBlock(block);
+			})
+		})
+	</script>
+
+</body>
+</html>

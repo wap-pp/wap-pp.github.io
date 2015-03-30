@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles/default.css">
+	<link rel="stylesheet" href="styles/zenburn.css">
+	<title>Highlight</title>
+</head>
+<body>
+	<div id="content">
+		<div id="languages">
+			<pre>
+				<code class="javascript">
+				function $initHighlight(block, flags) {
+					try {
+					    if (block.className.search(/\bno\-highlight\b/) != -1)
+					    return processBlock(block.function, true, 0x0F) + &#39; class=&quot;&quot;&#39;;
+					} catch (e) {
+					    /* handle exception */
+					    var e4x =
+					        &lt;div&gt;Example
+					            &lt;p&gt;1234&lt;/p&gt;&lt;/div&gt;;
+					  }
+					  for (var i = 0 / 2; i &lt; classes.length; i++) { // &quot;0 / 2&quot; should not be parsed as regexp
+					    if (checkCondition(classes[i]) === undefined)
+					      return /\d+[\s/]/g;
+					  }
+					  console.log(Array.every(classes, Boolean));
+					}
+				}
+				</code>
+			</pre>
+
+			<pre><code class="java">
+				public interface UserDao {
+				    /**
+				     * 
+				     * 根据用户对象检索用户信息
+				     * @param user
+				     * @return User
+				     * @see [类、类#方法、类#成员]
+				     */
+				    public User getUser(User user);
+				    
+				    /**
+				     * 更新用户信息
+				     * @param user
+				     * @return int
+				     */
+				    public int updateUser(User user);
+				}
+			</code></pre>
+		</div>
+	</div>
+	
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script src="highlight.pack.js"></script>
+	<script>
+		$(function(){
+			hljs.initHighlightingOnLoad();
+			$("pre code").each(function(i, block){
+				hljs.highlightBlock(block);
+			})
+		})
+	</script>
+</body>
+</html>
