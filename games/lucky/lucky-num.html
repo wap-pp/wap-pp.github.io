@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lucky Num</title>
+	<style>
+		body { font: 12px/16px arial; }
+		* { margin: 0px; padding: 0px;}
+		#wrap { width: 100px; height: 100px; overflow: hidden; position: relative; border: 1px solid #ccc; margin: 100px 0 0 100px;}
+		#wrap .shadow { display: none; background: #fff; opacity: 0.4; z-index: 10;position: absolute; width: 100px; height: 100px; }
+		#wrap.active .shadow { display: block; }
+		#wrap ul { position: relative; margin-top: 0px; list-style: none; z-index: 0; }
+		#wrap ul li { display: block; width: 100px; height: 98px; line-height: 98px; font-size: 64px; font-weight: bold; text-align: center; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+		#btn { margin: 30px 0 0 120px; padding: 5px 10px;  }
+	</style>
+</head>
+<body>
+	
+	<div id="wrap">
+		<div class="shadow"></div>
+		<ul id="luckyPanel">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+	</div>
+	<button id="btn">点击</button>
+
+	<script>
+		(function(){
+			var points = [];
+
+			var createPoints = function(begin, end, giftNum){
+				var giftNum = giftNum || 10; //默认10个元素
+				var length = (end-begin)/100+giftNum*7;
+				console.log(length);
+				var step = 2*Math.PI/length;
+				var t = 0;
+
+				while(t<Math.PI*2){
+					var tmp = 1000*Math.sin(t/2);
+					points.push(Math.abs(tmp));
+					t+=step;
+				}
+			}
+
+			var btn = document.getElementById("btn");
+			var wrap = document.getElementById("wrap");
+			var ul = document.getElementById("luckyPanel");
+			ul.innerHTML += ul.innerHTML;
+
+			btn.onclick = function(){
+				btn.disabled = true;
+				wrap.className = "active";
+				var luckyNum = parseInt(Math.random()*10);
+				var top = ul.offsetTop;
+
+				createPoints(top, luckyNum*100 , luckyNum);
+				console.log(points);
+
+				var t = 0;
+
+				var timer = setInterval(function(){
+					top -= points[t];
+					ul.style.marginTop = top+"px";
+					t++;
+					if(t==points.length){
+						clearInterval(timer);
+						btn.disabled = false;
+						wrap.className = "";
+					}
+					if(top<-1000){
+						top = 0;
+					}
+				},50)
+			}
+		})();
+	</script>
+</body>
+</html>

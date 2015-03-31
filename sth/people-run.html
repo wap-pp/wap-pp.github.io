@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>People Run</title>
+	<style>
+		@keyframes cycle {
+			0% { transform: rotate(0); } 100% { transform: rotate(360deg); }
+		}
+		@-o-keyframes cycle {
+			0% { -o-transform: rotate(0);} 100% { -o-transform: rotate(360deg); }  
+		}
+		@-ms-keyframes cycle {
+			0% { -ms-transform: rotate(0);} 100% {-ms-transform: rotate(360deg);}  
+		}
+		@-moz-keyframes cycle {
+			0% { -moz-transform: rotate(0);} 100% { -moz-transform: rotate(360deg); }  
+		}
+		@-webkit-keyframes cycle {
+			0% { -webkit-transform: rotate(0);} 100% { -webkit-transform: rotate(360deg); } 
+		}
+		#wrap { position: relative; width: 500px; height: 500px; }
+		#wrap .people { width: 80px; height: 80px; background: url(img/p2.gif) no-repeat;   position: relative; left: 230px; top: 1px;}
+		#wrap .circle { width: 500px; height: 500px; background: url(img/e2.png) no-repeat; 
+			animation: cycle 5s linear 0s infinite normal none;
+			-o-animation: cycle 5s linear 0s infinite normal none;
+			-ms-animation: cycle 5s linear 0s infinite normal none;
+			-moz-animation: cycle 5s linear 0s infinite normal none;
+			-webkit-animation: cycle 5s linear 0s infinite normal none;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		
+		<div class="people"></div>
+		<div class="circle"></div>
+	</div>
+</body>
+</html>
