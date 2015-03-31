@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax</title>
+</head>
+<body>
+	
+
+	<script>
+		var ajaxSend = function(){
+			var xmlhttp = null;
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}else {
+				xmlhttp = new ActiveObject('Microsoft.XMLHTTP');
+			}
+
+
+			xmlhttp.open('GET', 'demo.do', true);
+			xmlhttp.open('GET', 'demo.do', true);
+			xmlhttp.send();
+			xmlhttp.send();
+
+			ajax.onreadystatechange = function(){
+				if(xmlhttp.readyState==4 && xmlhttp.status==200){
+					console.log("done");
+				}
+			}
+		}
+
+		window.onload = function(){
+			ajaxSend();
+		}
+
+	</script>
+</body>
+</html>

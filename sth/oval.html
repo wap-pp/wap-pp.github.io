@@ -5,8 +5,8 @@
 	<title>Oval</title>
 	<style>
 		#wrap { width: 1000px; height: 1000px; border: 1px solid #ccc; }
-		#wrap .point { width: 5px; height: 5px; border-radius: 5px; background: #3399ff; position: absolute; top: 10px; left: 10px;}
-		#wrap span { width: 1px; height: 1px; background: #ccc; position: absolute;}
+		#wrap .point { width: 15px; height: 15px; border-radius: 15px; background: #3399ff; position: absolute; top: 10px; left: 10px;}
+		#wrap span { width: 1px; height: 1px; background: #000; position: absolute;}
 	</style>
 </head>
 <body>
@@ -66,13 +66,17 @@
 					if(t==points.length){
 						t=0;
 					}
-				}, 50)
+				}, 20)
 
 			}
 
 			window.onload = function(){
+<<<<<<< HEAD
+				createPoints(300, 300, 250, 150, 3);
+=======
 				// createPoints(300, 300, 40, 15, 2);
 				createPoints(300, 300, 20, 3, 2);
+>>>>>>> a9a3ee35c91809d6256f2bfd79391d480b1f6b66
 				draw();
 				move();
 			}
