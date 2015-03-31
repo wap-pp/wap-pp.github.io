@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gear</title>
+	<style>
+		@keyframes cycle{
+			0% { transform: rotate(0); } 100% { transform: rotate(360deg); }
+		}
+		@-o-keyframes cycle {
+			0% { -o-transform: rotate(0); } 100% { -o-transform: rotate(360deg); }
+		}
+		@-ms-keyframes cycle {
+			0% { -ms-transform: rotate(0);} 100% { -ms-transform: rotate(360deg);}
+		}
+		@-moz-keyframes cycle {
+			0% { -moz-transform: rotate(0);} 100% { -moz-transform: rotate(360deg);}
+		}
+		@-webkit-keyframes cycle {
+			0% { -webkit-transform: rotate(0);} 100% { -webkit-transform: rotate(360deg);}
+		}
+		@keyframes cycle-opp {
+			0% { transform: rotate(360deg); } 100% { transform: rotate(0); }
+		}
+		@-o-keyframes cycle-opp {
+			0% { transform: rotate(360deg); } 100% { transform: rotate(0); }
+		}
+		@-ms-keyframes cycle-opp {
+			0% { transform: rotate(360deg);} 100% { transform: rotate(0); }
+		}
+		@-moz-keyframes cycle-opp {
+			0% { transform: rotate(360deg);} 100% { transform: rotate(0); }
+		}
+		@-webkit-keyframes cycle-opp {
+			0% { transform: rotate(360deg);} 100% { transform: rotate(0); }
+		}
+
+		body { }
+		#wrap { position: relative; width: 150px; height: 150px; overflow: hidden; background: #000; }
+		.circle { width: 125px; height: 125px; background: url(img/gear.png); position: absolute; z-index: 10; }
+		.circle.c1 { left: 12px; top:0px; 
+			animation: cycle 7s linear 0s infinite normal none;
+			-o-animation: cycle 7s linear 0s infinite normal none;
+			-ms-animation: cycle 7s linear 0s infinite  normal none;
+			-moz-animation: cycle 7s linear 0s infinite  normal none;
+			-webkit-animation: cycle 7s linear 0s infinite  normal none;
+		}
+		.circle.c2 { left: -80px; top:80px; 
+			animation: cycle-opp 7s linear 0s infinite  normal none;
+			-o-animation: cycle-opp 7s linear 0s infinite  normal none;
+			-ms-animation: cycle-opp 7s linear 0s infinite  normal none;
+			-moz-animation: cycle-opp 7s linear 0s infinite  normal none;
+			-webkit-animation: cycle-opp 7s linear 0s infinite  normal none;
+		}
+		.circle.c3 { left: 102px; top:80px; 
+			animation: cycle-opp 7s linear 0s infinite normal none;
+			-o-animation: cycle-opp 7s linear 0s infinite normal none;
+			-ms-animation: cycle-opp 7s linear 0s infinite normal none;
+			-moz-animation: cycle-opp 7s linear 0s infinite normal none;
+			-webkit-animation: cycle-opp 7s linear 0s infinite normal none;
+		}
+		.circleBg { width: 160px; height: 160px; background: url(img/gear-bg.png); position: absolute; z-index: 0; }
+		.circleBg.c1 {
+			left: -35px;  top: -35px; opacity: 0.6; 
+			animation: cycle 13s linear 0s infinite normal none;
+			-o-animation: cycle 13s linear 0s infinite normal none;
+			-ms-animation: cycle 13s linear 0s infinite normal none;
+			-moz-animation: cycle 13s linear 0s infinite normal none;
+			-webkit-animation: cycle 13s linear 0s infinite normal none;
+		} 
+		.circleBg.c2 {
+			left: 55px;  top: 55px;
+			animation: cycle 10s linear 0s infinite normal none;
+			-o-animation: cycle 10s linear 0s infinite normal none;
+			-ms-animation: cycle 10s linear 0s infinite normal none;
+			-moz-animation: cycle 10s linear 0s infinite normal none;
+			-webkit-animation: cycle 10s linear 0s infinite normal none;
+		} 
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="circle c1"></div>
+		<div class="circle c2"></div>
+		<div class="circle c3"></div>
+		<div class="circleBg c1"></div>
+		<div class="circleBg c2"></div>
+	</div>
+</body>
+</html>
