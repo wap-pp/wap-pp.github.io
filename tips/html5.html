@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="../tools/highlight/styles/default.css">
 	<link rel="stylesheet" href="../tools/highlight/styles/zenburn.css">
 	<link rel="stylesheet" href="../css/base.css">
 	<title>HTML5学习笔记</title>
@@ -21,6 +20,7 @@
 				<li>5. 新的表单控件，比如calendar、date、time、email、url、search</li>
 			</ul>
 			<hr>
+
 			<h2>视频</h2>
 			<p>HTML5使用video元素支持三种视频格式：</p>
 			<ul>
@@ -28,12 +28,37 @@
 				<li>MPEG4 = 带有H.264视频编码和AAC音频编码的MPEG 4 文件</li>
 				<li>WebM = 带有VP8 视频编码和Vorbis音频编码的WebM文件</li>
 			</ul>
+			<br>
+			<p>分别支持的浏览器有：</p>
+			<ul>
+				<li>Ogg : FireFox(3.5+) Opera(10.5+) Chrome(5.0+) </li>
+				<li>MPEG 4 : IE(9.0+) Chrome(5.0+) Safari(3.0+)</li>
+				<li>WebM : FireFox(4.0+) Opera(10.6+) Chrome(6.0+) </li>
+			</ul>
 			<pre><code class="html">
 				&lt;video src="movie.ogg" controls="controls"&gt;
 					Your browser does not support the video.
 				&lt;/video&gt;
 			</code></pre>
+			<p>controls 属性提供添加播放、暂停和音量控件。包含width和height属性。在video标签中间插入的内容，是不支持video元素的浏览器显示的。video元素允许添加多个source元素。source元素可以链接不同的视频文件。浏览器将使用第一个可识别的格式</p>
+			<pre><code class="html">
+				&lt;video controls="controls" width="200" height="200"&gt;
+					&lt;source src="movie.ogg" type="video/ogg"&gt;
+					&lt;source src="movie.mp4" type="video/mp4"&gt;
+					Your browser does not support the video tag.
+				&lt;/video>
+			</code></pre>
 			<hr>
+
+			<h2>音频</h2>
+			<p>HTML5规定使用audio元素来包含音频</p>
+			<p>audio元素支持 Ogg Vorbis, Mp3, wav</p>
+			<ul>
+				<li>Ogg Vorbis : Fireforx(3.5+) Opera(10.5+) Chrome(3.0+)</li>
+				<li>MP3 : IE(9+) Chrome(3.0) Safari(3.0+)</li>
+				<li>Wav : Firefox(3.5) Opera(10.5+) Safari(3.0+)</li>
+			</ul>
+			<p>使用跟video一样</p>
 
 		</article>
 	</section>
