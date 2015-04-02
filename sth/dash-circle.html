@@ -1,0 +1,38 @@
+	<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dash circle</title>
+	<style>
+		@keyframes cycle {
+			0% { transform: rotate(0); }  100% { transform: rotate(360deg); }
+		}
+		@-o-keyframes cycle { 
+			0% { -o-transform: rotate(0); }  100% { -o-transform: rotate(360deg); }
+		}
+		@-ms-keyframes cycle {
+			0% { -ms-transform: rotate(0); }  100% { -ms-transform: rotate(360deg); }
+		}
+		@-moz-keyframes cycle {
+			0% { -moz-transform: rotate(0); } 100% { -moz-transform: rotate(360deg); }
+		}
+		@-webkit-keyframes cycle {
+			0% { -webkit-transform: rotate(0); }  100% { -webkit-transform: rotate(360deg); }
+		}
+		
+		.circle { width: 210px; height: 210px; background: #fff; position: relative; border: 2px dashed #3399ff; border-radius: 210px; 
+			animation: cycle 10s linear 0s infinite normal none;
+			-o-animation: cycle 10s linear 0s infinite normal none;
+			-ms-animation: cycle 10s linear 0s infinite normal none;
+			-moz-animation: cycle 10s linear 0s infinite normal none;
+			-webkit-animation: cycle 10s linear 0s infinite normal none;
+		}
+		.circle .i { width: 200px; height: 200px; background: #3399ff; position: absolute; left: 5px; top: 5px; border-radius: 200px; }
+	</style>
+</head>
+<body>
+	<div class="circle">
+		<div class="i"></div>
+	</div>
+</body>
+</html>
