@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跨浏览器设置透明度</title>
+	<style>
+		body { background: #333; }
+		.op { width: 100px; height: 100px; background: red;}
+		.op.op6 { 
+			filter: alpha(opacity=50);
+			-khtml-opacity: 0.5;
+			-moz-opacity: 0.5;
+			opacity: 0.6;
+		}
+	</style>
+</head>
+<body>
+	<div class="op"></div>
+	<div class="op op6"></div>
+</body>
+</html>
