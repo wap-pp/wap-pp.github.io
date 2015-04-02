@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>碎片</title>
+	<style>
+		@-webkit-keyframes title-chars-1 {
+			0%{-webkit-transform:translateY(200px)}100%{-webkit-transform:translateY(0)}
+		}
+		@-moz-keyframes title-chars-1{
+			0%{-moz-transform:translateY(200px)}100%{-moz-transform:translateY(0)}
+		}
+		@-ms-keyframes title-chars-1{
+			0%{-ms-transform:translateY(200px)}100%{-ms-transform:translateY(0)}
+		}
+		@-o-keyframes title-chars-1{
+			0%{-o-transform:translateY(200px)}100%{-o-transform:translateY(0)}
+		}
+		@keyframes title-chars-1{
+			0%{transform:translateY(200px)}100%{transform:translateY(0)}
+		}
+
+		#wrap { width: 500px; height: 500px; position: relative; }
+		.circle {  position: absolute; border-radius: 50%; 
+			-webkit-transform: translateX(0) translateY(200px) translateZ(0) rotateX(0) rotateY(0) rotateZ(0) rotate(0) scale(1);
+			-moz-transform: translateX(0) translateY(200px) translateZ(0) rotateX(0) rotateY(0) rotateZ(0) rotate(0) scale(1);
+			-ms-transform: translateX(0) translateY(200px) translateZ(0) rotateX(0) rotateY(0) rotateZ(0) rotate(0) scale(1);
+			-o-transform: translateX(0) translateY(200px) translateZ(0) rotateX(0) rotateY(0) rotateZ(0) rotate(0) scale(1);
+			transform: translateX(0) translateY(200px) translateZ(0) rotateX(0) rotateY(0) rotateZ(0) rotate(0) scale(1);
+			-webkit-animation: title-chars-1 .8s ease-out 0.7s 1 normal forwards;
+			-moz-animation: title-chars-1 .8s ease-out 0.7s 1 normal forwards;
+			-ms-animation: title-chars-1 .8s ease-out 0.7s 1 normal forwards;
+			-o-animation: title-chars-1 .8s ease-out 0.7s 1 normal forwards;
+			animation: title-chars-1 .8s ease-out 0.7s 1 normal forwards;
+		}
+		.circle.c1 { width: 20px; height: 20px; background: #3399ff; left: 100px; top: 30px; } 
+		.circle.c2 { width: 25px; height: 25px; background: #3366ff; left: 20px; top: 110px;} 
+		.circle.c3 { width: 15px; height: 15px; background: #6699ff; left: 120px; top: 110px;} 
+		.circle.c4 { width: 35px; height: 35px; background: #669933; left: 180px; top: 130px;} 
+		.circle.c5 { width: 17px; height: 17px; background: #66ff22; left: 120px; top: 150px;} 
+		.circle.c6 { width: 22px; height: 22px; background: #11ff22; left: 30px; top: 240px;} 
+		.circle.c7 { width: 28px; height: 28px; background: #33ff22; left: 90px; top: 200px;} 
+		.circle.c8 { width: 25px; height: 25px; background: #99ff22; left: 60px; top: 300px;} 
+		.circle.c9 { width: 15px; height: 15px; background: #55ff22; left: 120px; top: 250px;} 
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="circle c1"></div>
+		<div class="circle c2"></div>
+		<div class="circle c3"></div>
+		<div class="circle c4"></div>
+		<div class="circle c5"></div>
+		<div class="circle c6"></div>
+		<div class="circle c7"></div>
+		<div class="circle c8"></div>
+		<div class="circle c9"></div>
+	</div>
+
+	<script>
+		(function(){
+
+			var wrap = document.getElementById("wrap");
+			wrap.style.display = "none";
+
+			setTimeout(function(){
+				wrap.style.display = "block";
+			},3000)
+
+		})();
+	</script>
+</body>
+</html>
