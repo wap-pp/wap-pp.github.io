@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo3 Draggable</title>
+	<style>
+		#wrap {
+			width: 200px;
+			height: 200px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<img src="../sth/img/p2.gif" alt="" id="abc" ondragstart="drag(event)" draggable="true">
+
+	<script>
+		var drop = function(ev){
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("Text");
+			ev.target.appendChild(document.getElementById(data));
+		}
+
+		var allowDrop = function(ev){
+			ev.preventDefault();
+		}
+
+		var drag = function(ev){
+			ev.dataTransfer.setData("Text", ev.target.id);
+		}
+
+	</script>
+</body>
+</html>
