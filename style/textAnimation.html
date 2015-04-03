@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本动画</title>
+	<style>
+		@-wekkit-keyframes change {
+			0% { margin-top: 0; }
+			15% { margin-top: 0; }
+			25% { margin-top: -40px; }
+			40% { margin-top: -40px; }
+			50% { margin-top: -80px; }
+			65% { margin-top: -80px; }
+			75% { margin-top: -40px; }
+			85% { margin-top: -40px; }
+			100% { margin-top: 0; }
+		}		
+		@keyframes change {
+			0% { margin-top: 0; }
+			15% { margin-top: 0; }
+			25% { margin-top: -40px; }
+			40% { margin-top: -40px; }
+			50% { margin-top: -80px; }
+			65% { margin-top: -80px; }
+			75% { margin-top: -40px; }
+			85% { margin-top: -40px; }
+			100% { margin-top: 0; }
+		}
+
+		div {
+			position: relative;
+			margin: 100px;
+			width: 100px;
+			height: 100px;
+			-webkit-animation: change 6s linear 0 infinite normal none  ;
+			-moz-animation: change 6s linear 0 infinite normal none  ;
+			-ms-animation: change 6s linear 0 infinite normal none  ;
+			-o-animation: change 6s linear 0 infinite normal none  ;
+			animation: change 6s linear 0 infinite normal none  ;
+		}
+	
+	</style>
+</head>
+<body>
+	<div>
+		
+		这是文本动画啦！~~~
+	</div>
+</body>
+</html>
