@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条纹背景</title>
+	<style>
+
+		@keyframes move {
+			0% { background-position: 0px 0px; } 100% { background-position: 60px 30px; }
+		}
+		@-o-keyframes move {
+			0% { background-position: 0px 0px; } 100% { background-position: 60px 30px; }
+			/*from { background-position: 0px 0px; } to { background-position: 60px 30px; }*/
+		}
+		@-ms-keyframes move {
+			0% { background-position: 0px 0px; } 100% { background-position: 60px 30px; }
+			/*from { background-position: 0px 0px; } to { background-position: 60px 30px; }*/
+		}
+		@-moz-keyframes move {
+			0% { background-position: 0px 0px; } 100% { background-position: 60px 30px; }
+			/*from { background-position: 0px 0px; } to { background-position: 60px 30px; }*/
+		}
+		@-webkit-keyframes move {
+			0% { background-position: 0px 0px; } 100% { background-position: 60px 30px; }
+			/*from { background-position: 0px 0px; } to { background-position: 60px 30px; }*/
+		}
+		.stripe {
+			width: 210px;
+			height: 280px;
+			background-image: -webkit-linear-gradient(45deg, red 0%, red 25%, transparent 25%, transparent 50%, red 50%, red 75%, transparent 75%, transparent 100%);
+			background-size: 30px 30px;
+			text-align: center;
+			padding-top: 15px;
+			animation: move 0.5s linear 0s infinite normal none;
+			-o-animation: move 0.5s linear 0s infinite normal none;
+			-ms-animation: move 0.5s linear 0s infinite normal none;
+			-moz-animation: move 0.5s linear 0s infinite normal none;
+			-webkit-animation: move 0.5s linear 0s infinite normal none;
+			opacity: 0.6;
+			-webkit-transition: opacity 0.3s ease;
+			-moz-transition: opacity 0.3s ease;
+			transition: opacity 0.3s ease;
+		}
+		.stripe:hover {
+			opacity: 1;
+		}
+
+		.gradient {
+			width: 300px;
+			height: 300px;
+			background: linear-gradient(to bottom, #000 0%, transparent 50%, #000 100%);
+		}
+	</style>
+</head>
+<body>
+	<div class="stripe">
+		<img src="../img/photo.jpg" alt="">
+	</div>
+
+	<div class="gradient"></div>
+</body>
+</html>

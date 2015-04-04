@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border-image使用</title>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+			margin-bottom: 30px;
+		}
+		div.b1 {
+			border-image: url(../img/border.png) 30 30 30 30/10 repeat stretch;
+		}
+		div.b2 {
+			background: #3388ff;
+			border-image: url(../img/border-radius.png) 15 15 15 15/5 stretch stretch;
+		}
+		div.b3 {
+			width: 200px;
+			height: 30px;
+			background: #3388ff;
+			border-image: url(../img/border-radius.png) 15 15 15 15/5 stretch stretch;	
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="b1">
+		
+	</div>
+	<div class="b2">
+		
+	</div>
+	<div class="b3"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拍立得效果框</title>
+	<style>
+		body {
+			background: #ababab;
+		}
+		img.palaroid {
+			background: #000;
+			width: 180px;
+			height: 240px;
+			border: solid #fff;
+			box-shadow: 1px 1px 5px #333;
+			border-width: 6px 6px 20px 6px;
+		}
+
+		div.palaroid {
+			position: absolute;
+			left: 250px;
+			top:200px;
+			text-align: center;
+			font-size: 15px;
+			width: 180px;
+			height: 240px;
+			padding: 10px 10px 30px 10px;
+			border: 1px solid #bfbfbf;
+			background-color: #fff;
+			box-shadow: 2px 2px 3px #333;
+			-webkit-transform: rotate(30deg);
+			-moz-transform: rotate(30deg);
+			-ms-transform: rotate(30deg);
+			-o-transform: rotate(30deg);
+			transform: rotate(30deg);
+		}
+
+	</style>
+</head>
+<body>
+	<img src="../img/photo.jpg" alt="" class="palaroid">
+
+	<div class="palaroid">
+		<img src="../img/photo.jpg" alt="">
+		带文字的
+	</div>
+</body>
+</html>
