@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>调整文字、字符的间距</title>
+	<style>
+		p { border: 1px solid #ccc; }
+		.wordspacing { word-spacing: 20px; }
+		.letterspacing { letter-spacing: 20px;}
+		.lineheight1 { line-height: 80%; }
+		.lineheight2 { line-height: 20px; }
+		.lineheight3 { line-height: .8; }
+		.whitespace_normal { white-space: normal;}
+		.whitespace_pre { white-space: pre; }
+		.whitespce_nowrap { white-space: nowrap; }
+		.whitespace_prewrap { white-space: pre-wrap; }
+ 		.whitespace_preline { white-space: pre-line; }
+	</style>
+</head>
+<body>
+	<p class="wordspacing">控 制 空 格 的 长 度</p>
+	<p class="letterspacing">控制相邻两个字的间距</p>
+	<p class="lineheight1">使用百分比控制行间距<br>使用百分比控制行间距<br>使用百分比控制行间距</p>
+	<p class="lineheight2">使用像素值控制行间距<br>使用像素值控制行间距<br>使用像素值控制行间距</p>
+	<p class="lineheight3">使用数值（如1.2）控制行间距<br>使用数值（如1.2）控制行间距<br>使用数值（如1.2）控制行间距</p>
+	<p class="whitespace_normal">空白符默认处理，浏览器会忽略连续多个空白符                            为一个</p>
+	<p class="whitespace_pre">pre        保留多个空格</p>
+	<p class="whitespce_nowrap">忽略                 回车符，禁止换行，
+		直到碰到br <br>忽略回车符，禁止换行，直到碰到br	</p>
+	<p class="whitespace_prewrap">忽略                 回车符，禁止换行，直到碰到br <br>忽略回车符，禁止换行，直到碰到br	</p>
+	<p class="whitespace_preline">保留                 回车符
+		保留回车符</p>
+</body>
+</html>

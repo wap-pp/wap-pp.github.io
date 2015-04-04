@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器样式优先级</title>
+
+	<style>
+		.tip { background: yellow; }
+		#wrap { background: red; }
+		div {
+			width: 100px;
+			height: 100px;
+			background: #3399ff !important;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<div id="wrap" class="tip"></div>
+</body>
+</html>
