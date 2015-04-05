@@ -16,17 +16,25 @@
 				xmlhttp = new ActiveObject('Microsoft.XMLHTTP');
 			}
 
-
-			xmlhttp.open('GET', 'demo.do', true);
-			xmlhttp.open('GET', 'demo.do', true);
-			xmlhttp.send();
-			xmlhttp.send();
-
-			ajax.onreadystatechange = function(){
-				if(xmlhttp.readyState==4 && xmlhttp.status==200){
-					console.log("done");
+			(function(){
+				xmlhttp.open('GET', 'demo.do', true);
+				xmlhttp.send();
+				xmlhttp.onreadystatechange = function(){
+					if(xmlhttp.readyState==4 && xmlhttp.status==200){
+						console.log("done");
+					}
 				}
-			}
+			})()
+
+			(function(){
+				xmlhttp.open('GET', 'demo.do', true);
+				xmlhttp.send();
+				xmlhttp.onreadystatechange = function(){
+					if(xmlhttp.readyState==4 && xmlhttp.status==200){
+						console.log("done");
+					}
+				}
+			})();
 		}
 
 		window.onload = function(){

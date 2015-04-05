@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片翻转</title>
+	<style>
+		* { margin: 0px; }
+		body {
+			background: #ababab;
+			padding-top: 30px;
+		}
+		div {
+			padding: 10px;
+			width: 180px;
+			height: 240px;
+			float: left;
+			margin-left: 10px;
+			background: #fff;
+			box-shadow: 1px 1px 5px #333;
+		}
+		div.opp {
+			-webkit-transform: scaleX(-1);
+			-moz-transform: scaleX(-1);
+			-ms-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			transform: scaleX(-1);
+			filter:FilpH;
+			-ms-filter:"FilpH";
+		}
+	</style>
+</head>
+<body>
+	
+	<div>
+		<img src="../img/photo.jpg" alt="">
+	</div>
+	<div class="opp">
+		<img src="../img/photo.jpg" alt="">
+	</div>
+</body>
+</html>
