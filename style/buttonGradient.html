@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>button样式</title>
+	<style>
+		.green {
+			color: #3e5706;
+			background: #a5cd4e;
+			background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+			background: -webkit-linear-gradient(linear, left top, left bottom, color-stop(0%, #a5cd4e), color-stop(100%, #6b8f1a));
+			background: -webkit-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+			background: -o-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+			background: -ms-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+			background: linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+			outline: none;
+			border: 0px;
+			padding: 10px 30px;
+			font-weight: bold;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.green:hover {
+			background: #6b8f1a;
+			background: -moz-linear-gradient(top, #6b8f1a 0%, #a5cd4e 100%);
+			background: -webkit-linear-gradient(linear, left top, left bottom, color-stop(0%, #6b8f1a), color-stop(100%, #a5cd4e));
+			background: -webkit-linear-gradient(top, #6b8f1a 0%, #a5cd4e 100%);
+			background: -o-linear-gradient(top, #6b8f1a 0%, #a5cd4e 100%);
+			background: -ms-linear-gradient(top, #6b8f1a 0%, #a5cd4e 100%);
+			background: linear-gradient(top, #6b8f1a 0%, #a5cd4e 100%);
+		}
+		.blue {
+			color: #19667d;
+			background: #70c9e3;
+			background: -moz-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+			background: -webkit-linear-gradient(linear, left top, left bottom, color-stop(0%, #70c9e3), color-stop(100%, #39a0be));
+			background: -webkit-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+			background: -o-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+			background: -ms-linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+			background: linear-gradient(top, #70c9e3 0%, #39a0be 100%);
+			outline: none;
+			border: 0px;
+			padding: 10px 30px;
+			font-weight: bold;
+			font-size: 16px;
+			cursor: pointer;
+
+			-webkit-transiton: all 0.15s ease;
+			-moz-transition: all 0.15 ease;
+			-ms-transition: all 0.15 ease;
+			-o-transition: all 0.15 ease;
+			transition: all 0.15 ease;
+		}
+		.blue:hover {
+			-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,3), inset 0px 0px 2px rgba(0,0,0,5);
+			-moz-box-shadow: 1px 1px 1px rgba(0,0,0,3), inset 0px 0px 2px rgba(0,0,0,5);
+			box-shadow:  1px 1px 1px rgba(0,0,0,3), inset 0px 0px 2px rgba(0,0,0,5);
+		}
+
+	</style>
+</head>
+<body>
+	<button class="green">注册</button>
+	<button class="blue">登陆</button>
+</body>
+</html>
