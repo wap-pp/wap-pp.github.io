@@ -7,10 +7,9 @@
 		body { font: 12px/16px arial; }
 		* { margin: 0px; padding: 0px;}
 		#wrap { width: 100px; height: 100px; overflow: hidden; position: relative; border: 1px solid #ccc; margin: 100px 0 0 100px;}
-		#wrap .shadow { display: none; background: #fff; opacity: 0.4; z-index: 10;position: absolute; width: 100px; height: 100px; }
-		#wrap.active .shadow { display: block; }
-		#wrap ul { position: relative; margin-top: 0px; list-style: none; z-index: 0; }
-		#wrap ul li { display: block; width: 100px; height: 98px; line-height: 98px; font-size: 64px; font-weight: bold; text-align: center; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+		#wrap .shadow { display: block; background: linear-gradient(to bottom, #ccc 0%, transparent 25%, transparent 75%, #ccc);  z-index: 10;position: absolute; width: 100px; height: 100px; }
+		#wrap ul { position: relative; margin-top: -975px; list-style: none; z-index: 0; }
+		#wrap ul li { display: block; width: 100px; height: 49px; line-height: 49px; font-size: 48px; font-weight: bold; text-align: center; border-bottom: 1px solid #ccc;}
 		#btn { margin: 30px 0 0 120px; padding: 5px 10px;  }
 	</style>
 </head>
@@ -31,55 +30,81 @@
 			<li>10</li>
 		</ul>
 	</div>
-	<button id="btn">点击</button>
-
+	<button id="btn">点击</button>（<span id="result"></span>）
+	<script src="../../tools/jquery.js"></script>	
 	<script>
 		(function(){
 			var points = [];
 
-			var createPoints = function(begin, end, giftNum){
+			var createSpeedPoints = function(begin, end, giftNum){
+				points = [];
 				var giftNum = giftNum || 10; //默认10个元素
-				var length = (end-begin)/100+giftNum*7;
-				console.log(length);
-				var step = 2*Math.PI/length;
-				var t = 0;
+				var length = Math.abs(10-end+begin)+giftNum*4;
+				// console.log("total:"+length);
+				var step = Math.PI/2/7;
 
-				while(t<Math.PI*2){
-					var tmp = 1000*Math.sin(t/2);
-					points.push(Math.abs(tmp));
-					t+=step;
+				var beginArr = [];
+				for(var t = 0 , x = 0; t < 7; t++, x += step ){
+					var y = parseInt( 0.8 * Math.cos(1.8 * x) * 1000 );
+					if(y>0){
+						beginArr.push(y);
+					}
 				}
+				points = points.concat(beginArr);
+				var endArr = beginArr.reverse();
+				var last = 30; //points[beginArr.length-1];
+
+				for(var i = 0; i < length-beginArr.length*2; i++){
+					points.push(last);
+				}
+				points = points.concat(endArr);
 			}
 
 			var btn = document.getElementById("btn");
 			var wrap = document.getElementById("wrap");
 			var ul = document.getElementById("luckyPanel");
+			var current = 1;
+			ul.innerHTML += ul.innerHTML;
 			ul.innerHTML += ul.innerHTML;
 
 			btn.onclick = function(){
 				btn.disabled = true;
 				wrap.className = "active";
 				var luckyNum = parseInt(Math.random()*10);
+				document.getElementById("result").innerHTML = luckyNum;
 				var top = ul.offsetTop;
 
-				createPoints(top, luckyNum*100 , luckyNum);
-				console.log(points);
-
+				// console.log(current);
+				createSpeedPoints(current, luckyNum , 10);
+				// console.log(points.length);
 				var t = 0;
 
-				var timer = setInterval(function(){
-					top -= points[t];
-					ul.style.marginTop = top+"px";
-					t++;
-					if(t==points.length){
-						clearInterval(timer);
-						btn.disabled = false;
-						wrap.className = "";
-					}
-					if(top<-1000){
-						top = 0;
-					}
-				},50)
+				(function(){
+					var run = function(){
+						top += 50;
+						
+						// console.log(t+": "+points[t]+"("+top+")");
+						$('#luckyPanel').animate({marginTop: top+"px"}, points[t], function(){
+							if(top>=-475){
+								top = -975;
+								ul.style.marginTop = top+"px";
+							}
+							t++;
+							// var timer = setTimeout(run, points[t]);
+							if(t==points.length){
+								clearTimeout(timer);
+								btn.disabled = false;
+								wrap.className = "";
+								current = luckyNum;
+							}else {
+								run();
+							}
+						});
+						
+					};
+					run();
+				})()
+
 			}
 		})();
 	</script>
