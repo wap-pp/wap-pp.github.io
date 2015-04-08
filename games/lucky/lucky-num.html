@@ -39,7 +39,7 @@
 			var createSpeedPoints = function(begin, end, giftNum){
 				points = [];
 				var giftNum = giftNum || 10; //默认10个元素
-				var length = Math.abs(10-end+begin)+giftNum*5;
+				var length = Math.abs(10-end+begin)+giftNum*4;
 				// console.log("total:"+length);
 				var step = Math.PI/2/7;
 
@@ -90,12 +90,14 @@
 								ul.style.marginTop = top+"px";
 							}
 							t++;
-							var timer = setTimeout(run, points[t]);
+							// var timer = setTimeout(run, points[t]);
 							if(t==points.length){
 								clearTimeout(timer);
 								btn.disabled = false;
 								wrap.className = "";
 								current = luckyNum;
+							}else {
+								run();
 							}
 						});
 						
