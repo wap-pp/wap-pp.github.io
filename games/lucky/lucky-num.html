@@ -40,7 +40,7 @@
 				points = [];
 				var giftNum = giftNum || 10; //默认10个元素
 				var length = Math.abs(10-end+begin)+giftNum*5;
-				console.log("total:"+length);
+				// console.log("total:"+length);
 				var step = Math.PI/2/7;
 
 				var beginArr = [];
@@ -74,16 +74,16 @@
 				document.getElementById("result").innerHTML = luckyNum;
 				var top = ul.offsetTop;
 
-				console.log(current);
+				// console.log(current);
 				createSpeedPoints(current, luckyNum , 10);
-				console.log(points.length);
+				// console.log(points.length);
 				var t = 0;
 
 				(function(){
 					var run = function(){
 						top += 50;
 						
-						console.log(t+": "+points[t]+"("+top+")");
+						// console.log(t+": "+points[t]+"("+top+")");
 						$('#luckyPanel').animate({marginTop: top+"px"}, points[t], function(){
 							if(top>=-475){
 								top = -975;
