@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#wrap  { width: 1200px; height: 1500px;  border-right: 1px solid #ccc; }
+		.box { font: 12px arial; width: 200px; height: 20px; line-height: 20px;  margin-top: 10px; border: 1px solid #ababab; position: relative; left: 0px; text-align: center; font-weight: bold; }
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="box" id="swing">swing</div>
+		<div class="box" id="easeInQuad">easeInQuad</div>
+		<div class="box" id="easeOutQuad">easeOutQuad</div>
+		<div class="box" id="easeInOutQuad">easeInOutQuad</div>
+		<div class="box" id="easeInCubic">easeInCubic</div>
+		<div class="box" id="easeOutCubic">easeOutCubic</div>
+		<div class="box" id="easeInOutCubic">easeInOutCubic</div>
+		<div class="box" id="easeInQuart">easeInQuart</div>
+		<div class="box" id="easeOutQuart">easeOutQuart</div>
+		<div class="box" id="easeInOutQuart">easeInOutQuart</div>
+		<div class="box" id="easeInQuint">easeInQuint</div>
+		<div class="box" id="easeOutQuint">easeOutQuint</div>
+		<div class="box" id="easeInOutQuint">easeInOutQuint</div>
+		<div class="box" id="easeInSine">easeInSine</div>
+		<div class="box" id="easeOutSine">easeOutSine</div>
+		<div class="box" id="easeInOutSine">easeInOutSine</div>
+		<div class="box" id="easeInExpo">easeInExpo</div>
+		<div class="box" id="easeOutExpo">easeOutExpo</div>
+		<div class="box" id="easeInOutExpo">easeInOutExpo</div>
+		<div class="box" id="easeInCirc">easeInCirc</div>
+		<div class="box" id="easeOutCirc">easeOutCirc</div>
+		<div class="box" id="easeInOutCirc">easeInOutCirc</div>
+		<div class="box" id="easeInElastic">easeInElastic</div>
+		<div class="box" id="easeOutElastic">easeOutElastic</div>
+		<div class="box" id="easeInOutElastic">easeInOutElastic</div>
+		<div class="box" id="easeInBack">easeInBack</div>
+		<div class="box" id="easeOutBack">easeOutBack</div>
+		<div class="box" id="easeInOutBack">easeInOutBack</div>
+		<div class="box" id="easeInBounce">easeInBounce</div>
+		<div class="box" id="easeOutBounce">easeOutBounce</div>
+		<div class="box" id="easeInOutBounce">easeInOutBounce</div>
+	</div>
+
+	<script src="../../tools/jquery.js"></script>
+	<script src="../../tools/easing.js"></script>
+	<script>
+		$(function(){
+			$("#swing").animate({left: "1000px"}, { duration: 10000, easing: "swing" });
+			$("#easeInQuad").animate({left: "1000px"}, { duration: 10000, easing: "easeInQuad" });
+			$("#easeOutQuad").animate({left: "1000px"}, { duration: 10000, easing: "easeOutQuad" });
+			$("#easeInOutQuad").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutQuad" });
+			$("#easeInCubic").animate({left: "1000px"}, { duration: 10000, easing: "easeInCubic" });
+			$("#easeOutCubic").animate({left: "1000px"}, { duration: 10000, easing: "easeOutCubic" });
+			$("#easeInOutCubic").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutCubic" });
+			$("#easeInQuart").animate({left: "1000px"}, { duration: 10000, easing: "easeInQuart" });
+			$("#easeOutQuart").animate({left: "1000px"}, { duration: 10000, easing: "easeOutQuart" });
+			$("#easeInOutQuart").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutQuart" });
+			$("#easeInQuint").animate({left: "1000px"}, { duration: 10000, easing: "easeInQuint" });
+			$("#easeOutQuint").animate({left: "1000px"}, { duration: 10000, easing: "easeOutQuint" });
+			$("#easeInOutQuint").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutQuint" });
+			$("#easeInSine").animate({left: "1000px"}, { duration: 10000, easing: "easeInSine" });
+			$("#easeOutSine").animate({left: "1000px"}, { duration: 10000, easing: "easeOutSine" });
+			$("#easeInOutSine").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutSine" });
+			$("#easeInExpo").animate({left: "1000px"}, { duration: 10000, easing: "easeInExpo" });
+			$("#easeOutExpo").animate({left: "1000px"}, { duration: 10000, easing: "easeOutExpo" });
+			$("#easeInOutExpo").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutExpo" });
+			$("#easeInCirc").animate({left: "1000px"}, { duration: 10000, easing: "easeInCirc" });
+			$("#easeOutCirc").animate({left: "1000px"}, { duration: 10000, easing: "easeOutCirc" });
+			$("#easeInOutCirc").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutCirc" });
+			$("#easeInElastic").animate({left: "1000px"}, { duration: 10000, easing: "easeInElastic" });
+			$("#easeOutElastic").animate({left: "1000px"}, { duration: 10000, easing: "easeOutElastic" });
+			$("#easeInOutElastic").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutElastic" });
+			$("#easeInBack").animate({left: "1000px"}, { duration: 10000, easing: "easeInBack" });
+			$("#easeOutBack").animate({left: "1000px"}, { duration: 10000, easing: "easeOutBack" });
+			$("#easeInOutBack").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutBack" });
+			$("#easeInBounce").animate({left: "1000px"}, { duration: 10000, easing: "easeInBounce" });
+			$("#easeOutBounce").animate({left: "1000px"}, { duration: 10000, easing: "easeOutBounce" });
+			$("#easeInOutBounce").animate({left: "1000px"}, { duration: 10000, easing: "easeInOutBounce" });
+			
+		})
+	</script>
+
+</body>
+</html>

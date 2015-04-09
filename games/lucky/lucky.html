@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		
+		#box {
+			width: 170px; height: 265px; overflow: hidden; border: 1px solid #ccc; box-shadow: 0 0 5px 0 #ccc; text-align: center;
+		}
+		.boxList {
+			width: 100%; height: 265px ; background: url(num.png) center; background-position: 0px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="boxList"></div>
+	</div>
+
+	<script src="../../tools/jquery.js"></script>
+	<!-- <script src="../../tools/easing.js"></script> -->
+
+	<script>
+		jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+		jQuery.extend( jQuery.easing, {
+			easeInOutCubic: function (x, t, b, c, d) {
+				if ((t/=d/2) < 1) return c/2*t*t*t + b;
+				return c/2*((t-=2)*t*t + 2) + b;
+			}
+		});
+		$(function(){
+			var num = 10000;
+			$(".boxList").animate({backgroundPositionY: num},{
+					duration: 12000,
+					easing: "easeInOutCubic"
+				});
+		})
+	</script>
+</body>
+</html>
