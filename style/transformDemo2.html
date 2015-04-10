@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 Transform </title>
+	<style>
+		.menu ul { border-top: 15px solid black; padding: 0 10px; list-style: none; }
+		.menu ul li a { color: #fff; float: left; margin: 0 5px; font-size: 14px; height: 50px; line-height: 50px; text-align: center;width: 65px; padding: 10px 5px; background: #151515; border-radius: 0 0 5px 5px; box-shadow: 0 0 1px #ccc, inset 0 0 2px #fff; text-shadow: 0 1px 1px #686868; text-decoration: none; }
+		.menu ul li.translate a { background: #2ec7d2; }
+		.menu ul li.translate-x a { background: #8fdd21; }
+		.menu ul li.translate-y a { background: #f45917; }
+		.menu ul li.rotate a { background: #d50e19; }
+		.menu ul li.scale a { background: #cdddf2; }
+		.menu ul li.scale-x a { background: #0fdd21; }
+		.menu ul li.scale-y a { background: #cd5917; }
+		.menu ul li.skew a { background: #551199; }
+		.menu ul li.skew-x a { background: #dd5500; }
+		.menu ul li.skew-y a { background: #ee1199; }
+		.menu ul li.matrix a { background: #991199; }
+
+		.menu ul li.translate a:hover { transform: translate(-10px, -10px); }
+		.menu ul li.translate-x a:hover { transform: translateX(-10px); }
+		.menu ul li.translate-y a:hover { transform: translateY(-10px); }
+		.menu ul li.rotate a:hover { transform: rotate(30deg); }
+		.menu ul li.scale a:hover { transform: scale(1.2, 1.5); }
+		.menu ul li.scale-x a:hover { transform: scaleX(1.2); }
+		.menu ul li.scale-y a:hover { transform: scaleY(1.5); }
+		.menu ul li.skew a:hover { transform: skew(20deg, 10deg); }
+		.menu ul li.skew-x a:hover { transform: skewX(20deg); }
+		.menu ul li.skew-y a:hover { transform: skewY(30deg); }
+		.menu ul li.matrix a:hover { transform: matrix(1,1,-1,0,0,0); }
+	</style>
+</head>
+<body>
+	<a href="http://www.w3cplus.com/content/css3-transform">学习</a>
+	<div class="menu">
+		<ul class="clearfix">
+			<li class="item translate"><a href="#">Translate</a></li>
+			<li class="item translate-x"><a href="#">TranslateX</a></li>
+			<li class="item translate-y"><a href="#">TranslateY</a></li>
+			<li class="item rotate"><a href="#">rotate</a></li>
+			<li class="item scale"><a href="#">scale</a></li>
+			<li class="item scale-x"><a href="#">scale-x</a></li>
+			<li class="item scale-y"><a href="#">scale-y</a></li>
+			<li class="item skew"><a href="#">skew</a></li>
+			<li class="item skew-x"><a href="#">skew-x</a></li>
+			<li class="item skew-y"><a href="#">skew-y</a></li>
+			<li class="item matrix"><a href="#">matrix</a></li>
+		</ul>
+	</div>
+</body>
+</html>

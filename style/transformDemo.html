@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 Transform</title>
+	<style>
+	 	body { background: #f0f0f0; }
+		.box { width: 150px; height: 150px; border: 1px dashed #ccc; margin: 50px; position: relative; float: left; }
+		.in {width: 150px; height: 150px; position: absolute; background: rgba(150, 30, 30, 0.2); font: bold 12px Arial; line-height: 150px; text-align: center; }
+		.in.rotate { transform: rotate(30deg); }
+		.in.rotateOrigin { transform: rotate(30deg); transform-origin: 0px 0px; }
+		.in.rotateOriginLeftTop { transform: rotate(30deg); transform-origin:left;}
+		.in.translate { transform: translate(20px, 20px); }
+		.in.translate2 { transform: translate(20%, 20%); }
+		.in.translateX { transform: translateX(30%); }
+		.in.translateY { transform: translateY(30%); }
+		.in.scale { transform: scale(1.5, 1.2); }
+		.in.scaleX { transform: scaleX(1.2); }
+		.in.scaleY { transform: scaleY(1.3); }
+		.in.skew { transform: skew(30deg, 30deg);}
+		.in.skewX { transform: skewX(30deg); }
+		.in.skewY { transform: skewY(30deg); }
+	</style>
+</head>
+<body>
+	<!-- 旋转 rotate -->
+	<div class="box">
+		<div class="in rotate">rotate(30deg)</div>
+	</div>
+	<div class="box">
+		<div class="in rotateOrigin">rotate(30deg) <br> rotateOrigin</div>
+	</div>
+	<div class="box">
+		<div class="in rotateOriginLeftTop">rotate(30deg) <br> rotateOriginLeftTop</div>
+	</div>
+	<!-- 偏移 translate -->
+	<div class="box">
+		<div class="in translate">translate(20px, 20px)</div>
+	</div>
+	<div class="box">
+		<div class="in translate2">translate(20%, 20%)</div>
+	</div>
+	<div class="box">
+		<div class="in translateX">translateX(30%)</div>
+	</div>
+	<div class="box">
+		<div class="in translateY">translateY(30%)</div>
+	</div>
+	<!-- 缩放 scale -->
+	<div class="box">
+		<div class="in scale">scale(1.5, 1.2)</div>
+	</div>
+	<div class="box">
+		<div class="in scaleX">scaleX(1.2)</div>
+	</div>
+	<div class="box">
+		<div class="in scaleY">scaleY(1.3)</div>
+	</div>
+	<!-- 扭曲 skew -->
+	<div class="box">
+		<div class="in skew">skew(30deg, 30deg)</div>
+	</div>
+	<div class="box">
+		<div class="in skewX">skewX(30deg)</div>
+	</div>
+	<div class="box">
+		<div class="in skewY">skewY(30deg)</div>
+	</div>
+	<!-- matrix 矩阵 -->
+	<!--  -->
+
+</body>
+</html>
