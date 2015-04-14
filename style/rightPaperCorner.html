@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>右上角纸张卷起</title>
+	<style>
+		＊ ｛ margin：0； padding：0；｝
+		.clear { clear: both; }
+		.paper { position: relative; height: auto; width: 860px; margin: 30px auto; padding: 15px; border: 1px solid #ccc; box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3); -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -ms-transition: all 0.4s; -o-transition: all 0.4s; background: #fff;  }
+		.paper:hover { border-top-right-radius: 140px 50px; }
+		.paper:before, .paper:after { content: ''; 
+		background: -webkit-linear-gradient(top, #fff 0%, #e5e5e5 100%);
+		background: -moz-linear-gradient(top, #fff 0%, #e5e5e5 100%);
+		background: -o-linear-gradient(top, #fff 0%, #e5e5e5 100%);
+		background: linear-gradient(top, #fff 0%, #e5e5e5 100%);
+		background: #fff;
+		border: 1px solid #ccc;
+		position: absolute;
+		z-index: -1;
+		box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3);
+		 }
+		.paper:before {
+			height: 96%;
+			width: 96%;
+			top: -20px;
+			left: 20px;
+		}
+		.paper:after {
+			height: 96%;
+			width: 98%;
+			top: -10px;
+			left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="paper">
+		<div class="content">
+			<h1>不好意思！请不要高估你的人脉关系</h1>
+			<p>在家里听到这样一个段子：市政协会议散会，几个身价十亿+的老板去打牌。某全市某超市连锁企业的老板同为身家过亿的政协委员，和他们一起开过几次会，也提出去一起玩。煤老板们面面相觑，最后还是首富张嘴说话了： “我们哥几个一起玩，是因为我们都有产业，你一个开小卖店的跟着我们凑什么热闹？”然后在凛冽的秋风中，超市企业老板悻悻地回家了……
+
+某哥经常炫耀他跟某女神关系多熟悉多熟悉，讲述他们一起社会实践的点点滴滴，还把对方设置为特别好友，描述很是亲密。我们都觉得“哇塞，好牛的感觉。”只是我们从来没有见过此女神和他网络上有过互动。我们平时出来吃饭，K歌都希望此哥能够安排这位女神出席一下，让我们一起认识认识。但是也从来没有邀请过。后来我终于在网上见到了女神给这哥们的一次回复：请你以后不要再骚扰我……</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+</body>
+</html>
