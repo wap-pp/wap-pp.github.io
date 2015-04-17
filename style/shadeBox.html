@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>抖动图片</title>
+	<style>
+		@-webkit-keyframes shade {
+			0%, 84% { top: 0px; } 85% { top: -5px; } 87% { top: 0px; }
+			90% { top: -3px; } 92% { top: 0px; }
+			94% { top: -2px; } 96% { top: -0px; } 
+			98% { top: -1px; } 100% { top: -0px; }
+		}
+		@-moz-keyframes shade {
+			0%, 84% { top: 0px; } 85% { top: -5px; } 87% { top: 0px; }
+			90% { top: -3px; } 92% { top: 0px; }
+			94% { top: -2px; } 96% { top: -0px; } 
+			98% { top: -1px; } 100% { top: -0px; }
+		}
+		@-ms-keyframes shade {
+			0%, 84% { top: 0px; } 85% { top: -5px; } 87% { top: 0px; }
+			90% { top: -3px; } 92% { top: 0px; }
+			94% { top: -2px; } 96% { top: -0px; } 
+			98% { top: -1px; } 100% { top: -0px; }
+		}
+		@-o-keyframes shade {
+			0%, 84% { top: 0px; } 85% { top: -5px; } 87% { top: 0px; }
+			90% { top: -3px; } 92% { top: 0px; }
+			94% { top: -2px; } 96% { top: -0px; } 
+			98% { top: -1px; } 100% { top: -0px; }
+		}
+		@keyframes shade {
+			0%, 84% { top: 0px; } 85% { top: -5px; } 87% { top: 0px; }
+			90% { top: -3px; } 92% { top: 0px; }
+			94% { top: -2px; } 96% { top: -0px; } 
+			98% { top: -1px; } 100% { top: -0px; }
+		}
+		div { width: 100px; height: 100px; background: #ff3333; margin: 100px; position: relative;
+			-webkit-animation: shade 5s linear infinite;
+			-moz-animation: shade 5s linear infinite;
+			-ms-animation: shade 5s linear infinite;
+			-o-animation: shade 5s linear infinite;
+			animation: shade 5s linear infinite;
+		}
+
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
