@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>边角翻折</title>
+	<style>
+		＊ { margin: 0px; padding: 0px; }
+		body { background: #888; }
+		#paper_top_right { position: absolute; height: 150px; width: 150px; top: 0; right: 0;  }
+		#paper_top_right_animate { height: 30px; width: 30px; position: absolute; 
+			background: －webkit-linear-gradient(45deg, #d7d7d7, #e2e2e2 20%, #ffffff 35%, #d5d5d5 50%, #555555 50%, #555555;)
+			background: －moz-linear-gradient(45deg, #d7d7d7, #e2e2e2 20%, #ffffff 35%, #d5d5d5 50%, #555555 50%, #555555;)
+			background: －ms-linear-gradient(45deg, #d7d7d7, #e2e2e2 20%, #ffffff 35%, #d5d5d5 50%, #555555 50%, #555555;)
+			background: －o-linear-gradient(45deg, #d7d7d7, #e2e2e2 20%, #ffffff 35%, #d5d5d5 50%, #555555 50%, #555555;)
+			background: linear-gradient(45deg, #d7d7d7, #e2e2e2 20%, #ffffff 35%, #d5d5d5 50%, #555555 50%, #555555; )
+			border-bottom-left-radius: 10px 100px;
+			border-bottom-right-radius: 100px 10px;
+			box-shadow: -3px 2px 5px #333333;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<div id="paper_top_right">
+		<div id="paper_top_right_animate"></div>
+	</div>
+
+
+
+	<script src="../tools/jquery.js"></script>
+	<script>
+		$(function(){
+			$("#paper_top_right").hover(function(){
+				show_top_right();
+			}, function(){
+				hide_top_right();
+			});
+
+			function show_top_right(){
+				$("#paper_top_right_animate").stop(true, false).animate({height:"150px", width:"150px"}, "show");
+			}
+
+			function hide_top_right(){
+				$("#paper_top_right_animate").stop(true, false).animate({height:"30px", width:"30px"}, "show");
+			}
+		})
+	</script>
+</body>
+</html>
