@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>气泡式提示框</title>
+	<style>
+		#tips { width: 200px; height: 100px; padding: 5px; position: absolute; top: -180px; display: none; border: 1px solid; border-radius: 20px; left: 50px; background: #d3d3d3; }
+		#tips:before { content: ""; width: 50px; height: 50px; border-radius: 40%; position: absolute; left: 20%; top: 80%; border: 1px solid; background: #d3d3d3; }
+		#tips:after { content: ""; width: 30px; height: 30px; border-radius: 40%; position: absolute; left: 10%; top: 110%; border: 1px solid; background: #d3d3d3; }
+		
+		a { position: absolute;  top: 190px; left: 10px; }
+		a:hover > #tips {  display: block; }
+	</style>
+</head>
+<body>
+	<a href="#">移过来看看  <div id="tips">被你发现啦</div></a>
+</body>
+</html>

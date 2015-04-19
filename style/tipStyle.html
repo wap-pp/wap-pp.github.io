@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动上去的效果</title>
+	<style>
+		#tips { width: 200px; height: 100px; padding: 5px; border: 1px solid; border-radius: 10px; position: absolute; display: none; top: -130px; background: #d3d3d3; } 
+		#tips:before { content: ""; width: 0; height: 0; border-top: 10px solid; border-bottom: 5px solid transparent; border-left: 10px solid; border-right: 16px solid transparent; position: absolute; left: 45%; top: 101%; }
+		#tips:after { content: ""; width: 0; height: 0; border-top: 9px solid #d3d3d3; border-bottom: 4px solid transparent; border-left: 9px solid #d3d3d3; border-right: 15px solid transparent; position: absolute; left: 45.5%; top: 100%; }
+		a { position: absolute; top: 140px; }
+		a:hover > #tips { display: block; }
+	</style>
+</head>
+<body>
+	<a href="#">把鼠标移过来 <div id="tips">看到我啦</div>	 </a>
+</body>
+</html>
