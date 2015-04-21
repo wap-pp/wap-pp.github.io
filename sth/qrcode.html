@@ -8,11 +8,16 @@
 	<div id="qrcode"></div>
 
 	<script src="../tools/jquery.js"></script>
+	<script src="../tools/html5.js"></script>
+	<script src="../tools/canvas.js"></script>
 	<script src="../tools/jquery.qrcode.min.js"></script>
 
 	<script>
 	 $(function(){
-	 	$("#qrcode").qrcode("链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接");
+	 	$("#qrcode").qrcode({
+	 		render: "img", 
+	 		text:"链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接链接"
+	 	});
 	 });
 	</script>
 </body>
