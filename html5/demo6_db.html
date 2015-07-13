@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>s</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+	<script>
+		var db = openDatabase("mydb", "1.0", "test_db", 1024*100);
+		db.transaction(function(tx){
+			console.log(tx);
+			tx.executeSql("create table if not exists msgtable(msg TEXT, time INTEGER )");
+			tx.executeSql("insert into msgtable values(?, ?)", ["neil", Date.now()], function(tx, result){
+				console.log("success");
+				console.log(result);
+			}, function(tx, err){
+				console.log(err);
+			})
+			tx.executeSql("select * from msgtable", [], function(tx, rs){
+				console.log(rs.rows.length);
+				console.log(rs.rows.item(0).msg);
+				console.log(rs.rows.item(0).time);
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

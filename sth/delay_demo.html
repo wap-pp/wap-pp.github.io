@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 错开渐显动画</title>
+	<style>
+		.ele1, .ele2 { opacity: 0; 
+			position: absolute; 
+			left: 50%;
+			-webkit-translate3D(-50%, 0, 0);
+			translate3D(-50%, 0, 0);
+		}
+		.ele1 { top: 30px; width: 50px; height: 5px; background: #ccc; }
+		.ele2 { top: 5s0px; width: 50px; height: 5px; background: #ccc;}
+
+		@-webkit-keyframes ele-show {
+			0% { opacity: 0.2; -webkit-translate3D(-20px, 0, 0); }
+			90% { opacity: 1; -webkit-translate3D(5px, 0, 0); }
+			100% { opacity: 1; -webkit-translate3D(0px, 0, 0) }
+		}
+		@keyframes ele-show {
+			0% { opacity: 0.2; translate3D(-20px, 0, 0); }
+			90% { opacity: 1; translate3D(5px, 0, 0); }
+			100% { opacity: 1; translate3D(0px, 0, 0) }
+		}
+		.ele1, .ele2 {
+			-webkit-animation: ele-show .5s linear forwards;
+			animation: ele-show .5s linear forwards;
+		}
+		.ele1 {
+			-webkit-animation-delay: .2s;
+			animation-delay: .2s;
+		}
+		.ele2 {
+			-webkit-animation-delay: .4s;
+			animation-delay: .4s;
+		}
+		
+
+
+
+	</style>
+</head>
+<body class="active">
+	<div class="ele1"></div>
+	<div class="ele2"></div>
+</body>
+</html>

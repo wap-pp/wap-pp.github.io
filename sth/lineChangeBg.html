@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>insert line</title>
+	<style>
+	    @-webkit-keyframes bb {
+			0% { background: #fff; }  100% { background: #dff0d8; }
+		}
+		@-moz-keyframes bb {
+			0% { background: #fff; }  100% { background: #dff0d8; }
+		}
+		@-o-keyframes bb {
+			0% { background: #fff; }  100% { background: #dff0d8; }
+		}
+		@keyframes bb {
+			0% { background: #fff; }  100% { background: #dff0d8; }
+		}
+		@keyframes bb {
+			0% { background: #fff; }  100% { background: #dff0d8; }
+		}
+		ul { margin: 100px; }
+		li { height: 30px; line-height: 30px; position: relative; top: 0px; transtion: all 0.5 ease; }
+		li:hover {  -webkit-animation: bb 0.4s linear 0s 4 alternate none;
+								-moz-animation: bb 0.4s linear 0s 4 alternate none;
+								-ms-animation: bb 0.4s linear 0s 4 alternate none;
+								-o-animation: bb 0.4s linear 0s 4 alternate none;
+								animation: bb 0.4s linear 0s 4 alternate none;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="txt"><button onclick="add()">提交</button>
+
+	<ul id="panel">
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+	</ul>
+
+	<script>
+		function add(){
+			var panel = document.getElementById('panel');
+			var txt = document.getElementById('txt');
+			panel.innerHTML = '<li>'+txt.value+'</li>' + panel.innerHTML;
+
+			document.getElementsByTagName('li')[0].className = 'bound';
+		}
+	</script>
+
+</body>
+</html>

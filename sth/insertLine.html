@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>insert line</title>
+	<style>
+	    @-webkit-keyframes bb {
+			0% { top: 0px; }  5% { top: 3px; }  10% { top: 1px; }   15% { top: 4px; }  20% { top: 2px; } 25% { top: 0px; }
+			100% { top: 0px;}
+		}
+		@-moz-keyframes bb {
+			0% { top: 0px; }  5% { top: 3px; }  10% { top: 1px; }   15% { top: 4px; }  20% { top: 2px; } 25% { top: 0px; }
+			100% { top: 0px;}
+		}
+		@-o-keyframes bb {
+			0% { top: 0px; }  5% { top: 3px; }  10% { top: 1px; }   15% { top: 4px; }  20% { top: 2px; } 25% { top: 0px; }
+			100% { top: 0px;}
+		}
+		@keyframes bb {
+			0% { top: 0px; }  5% { top: 3px; }  10% { top: 1px; }   15% { top: 4px; }  20% { top: 2px; } 25% { top: 0px; }
+			100% { top: 0px;}
+		}
+		@keyframes bb {
+			0% { top: 0px; }  5% { top: 3px; }  10% { top: 1px; }   15% { top: 4px; }  20% { top: 2px; } 25% { top: 0px; }
+			100% { top: 0px;}
+		}
+		ul { margin: 100px; }
+		li { height: 30px; line-height: 30px; position: relative; top: 0px; transtion: all 0.5 ease; }
+		li:hover { color: #f00; -webkit-animation: bb 1s linear 0s infinite normal none;
+								-moz-animation: bb 1s linear 0s infinite normal none;
+								-ms-animation: bb 1s linear 0s infinite normal none;
+								-o-animation: bb 1s linear 0s infinite normal none;
+								animation: bb 1s linear 0s infinite normal none;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="txt"><button onclick="add()">提交</button>
+
+	<ul id="panel">
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+		<li>啊啊啊啊啊啊</li>
+	</ul>
+
+	<script>
+		function add(){
+			var panel = document.getElementById('panel');
+			var txt = document.getElementById('txt');
+			panel.innerHTML = '<li>'+txt.value+'</li>' + panel.innerHTML;
+
+			document.getElementsByTagName('li')[0].className = 'bound';
+		}
+	</script>
+
+</body>
+</html>

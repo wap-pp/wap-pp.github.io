@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div {
+			margin: 20px;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ccc;
+			background: #3399ff;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="wrap1"></div>
+	<div id="wrap2"></div>
+	<div id="wrap3"></div>
+	<div id="wrap4"></div>
+	<div id="wrap5"></div>
+	<div id="wrap6"></div>
+	<div id="wrap7"></div>
+	<div id="wrap8"></div>
+	<div id="wrap9"></div>
+	<div id="wrap10"></div>
+
+	<script src="../tools/jquery.js"></script>
+	<script src="../tools/velocity.min.js"></script>
+
+	<script>
+        $(function(){
+        	$("#wrap1").animate({width: "300px", opacity: "50%"}, 800);
+        	$("#wrap1").animate({width: "100px"}, 800);
+
+
+        	$("#wrap2").velocity({width: "300px", opacity: "50%"}, 800, "ease-in-out", function(){ console.log("ok"); })
+        				.velocity({width: "+400px"}, 1000);
+
+        	$("#wrap3").velocity({rotateZ: "45deg", scaleX:2.0})
+        			   .velocity("reverse");
+
+        });
+	</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

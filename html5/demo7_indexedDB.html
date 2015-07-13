@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script>
+		window.indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+		window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.mozIDBTransaction || window.msIDBTransition;
+		window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.mozIDBKeyRange || window.msIDBKeyRange;
+		window.IDBCursor = window.IDBCursor || window.webkitIDBCursor || window.mozIDBCursor || window.msIDBCursor;
+
+		var dbName = "indexedDtbest";
+		var dbVersion = 1;
+		var idb;
+		var dbConnect = indexedDB.open(dbName, dbVersion);
+		dbConnect.onsuccess = function(e){
+			idb = e.target.result;
+			console.log(idb);
+			console.log("数据库连接成功");
+		};
+		dbConnect.onerror = function(e){
+			console.log("err");
+		};
+		dbConnect.onupgradeneeded = function(e){
+			idb = e.target.result;
+			var tx = e.target.transaction;
+			var oldVersion = e.oldVersion;
+			var newVersion = e.newVersion;
+			console.log(oldVersion);
+			console.log(newVersion);
+
+			var name = "user";
+			var optionalParameters = {
+				keyPath: "userid",
+				autoIncrement: false
+			}
+			var store = idb.createObjectStore(name, optionalParameters);
+			console.log(store);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	设置：<input type="text" id="saveID"> 
+	<button onclick="savefn()">save</button>
+	<br>
+	<button onclick="getfn()">get</button>
+
+	<script> 
+		function savefn(){
+			var saveMsg = document.getElementById("saveID");
+			window.localStorage.setItem("msg", saveMsg.value);
+
+		}
+
+		function getfn(){
+			alert(window.localStorage.getItem("msg"));
+
+			for(var i = 0; i < localStorage.length; i++){
+				console.log(localStorage.key(i));
+			}
+		}
+	</script>
+</body>
+</html>
