@@ -1,0 +1,50 @@
+abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    -webkit-tap-highlight-color: transparent
+}
+body {
+    font-family: 'Helvetica Neue',Roboto,"microsoft yahei";
+    line-height: 1;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    font-size: 62.5%;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block
+}
+ul {
+    list-style: none
+}
+blockquote,q {
+    quotes: none
+}
+blockquote:after,blockquote:before,q:after,q:before {
+    content: '';
+    content: none
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    text-decoration: none
+}
+em,i {
+    font-style: normal
+}
+h1,h2,h3,h4,h5 {
+    font-weight: 400
+}
+
+/*@media only screen and (max-width: 1080px),only screen and (max-device-width:1080px) {
+    body,html {
+        font-size:33.75px
+    }
+}*/
