@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/global.css">
+	<style>
+		#mySwipe div {
+		  width: 100%;
+		  min-height: 500px;
+		}
+		#swipe-box1 {
+			background: url(images/1.jpg) no-repeat;
+			background-size: 100% auto;
+		}
+		#swipe-box2 {
+			background: url(images/2.jpg) no-repeat;
+			background-size: 100% auto;
+		}
+		#swipe-box3 {
+			background: url(images/3.jpg) no-repeat;
+			background-size: 100% auto;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div id="mySwipe" style='max-width:500px;margin:0 auto' class='swipe'>
+		<div class="swipe-wrap">
+			<div id="swipe-box1"></div>
+			<div id="swipe-box2"></div>
+			<div id="swipe-box3"></div>
+		</div>
+	</div>
+
+
+	<script src="js/swipe.js"></script>
+	<script>
+		// reset size 
+		(function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+        // swipe
+        var elem = document.getElementById('mySwipe');
+		window.mySwipe = Swipe(elem, {
+		  startSlide: 0,
+		  speed: 300,
+		  auto: 3000,
+		  continuous: true,
+		  disableScroll: true,
+		  stopPropagation: true,
+		  callback: function(index, element) {
+		  	console.log(index);
+		  },
+		  transitionEnd: function(index, element) {
+		  	console.log("transitionEnd");
+		  }
+		});
+
+	</script>
+</body>
+</html>

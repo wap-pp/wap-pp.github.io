@@ -49,3 +49,24 @@ em,i {
 h1,h2,h3,h4,h5 {
     font-weight: 400
 }
+
+/* Swipe 2 required styles */
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+/* END required styles */
+
+
+
+
